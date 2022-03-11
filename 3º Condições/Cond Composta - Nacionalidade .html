@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body { background: rgb(105, 175, 25)}
+        </style>
+</head>
+<body>
+    <h1>Nacionalidade</h1>
+    Qual seu país? <input type="text" name="txtpaís" id="txtpaís">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res">
+    </div>
+    <!--OLHAR DEPOIS COM TEMPO-->
+    <!--
+if (país == 'brasil') {  res.innerText = `Vivendo em ${país}, você é brasileiro` } 
+e só aparecia a mensagem do else `Vivendo em ${país}, você é estrangeiro`
+Até que dei uma pesquisada e descobri que minha condição não estava analisando o conteúdo da variável país,  ent mesmo que o usuário digitasse brasil, dava que ele era estrangeiro,  tive que colocar (país.value == 'brasil') e ${país.value} pra não aparecer objectHTMLinputElement. Esses foram os únicos problemas que tive com meu código, tô compartilhando caso mais alguém tenha tido o mesmo erro, já que o guanabara nos mostrou mais exemplos de variáveis numéricas-->
+    <script>
+        function calcular() {
+            var txtv = window.document.querySelector('input#txtpaís').value.toLowerCase()
+            var res = window.document.querySelector('div#res')
+            var país = Number(país.value)
+            res.innerText = '<p>Vivendo em <strong>${país}</strong> você é Brasileiro</p>'
+            
+            if (país.value == 'brasil') {
+                res.innerText += `<p>Você é Estrangeiro</p>`
+            }
+        }
+        </script>
+
+</body>
+</html>
